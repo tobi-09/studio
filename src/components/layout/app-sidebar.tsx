@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -11,6 +10,7 @@ import {
   CreditCard,
   Layers,
   Zap,
+  Lock,
 } from "lucide-react"
 
 import {
@@ -28,10 +28,10 @@ import { usePathname } from "next/navigation"
 
 const navigation = [
   { name: "O produktu", href: "/", icon: Info },
-  { name: "Hardware & Balíčky", href: "/#pricing", icon: CreditCard },
+  { name: "Plány nasazení", href: "/#pricing", icon: CreditCard },
   { name: "Jak to funguje", href: "/how-it-works", icon: HardDrive },
-  { name: "Integrace Bakaláři", icon: Layers, href: "/integration" },
-  { name: "Bezpečnost HW", href: "/hardware-security", icon: ShieldAlert },
+  { name: "Integrace Bakaláři", icon: Layers, href: "/#integration" },
+  { name: "Smart Campus HW", href: "/smart-campus", icon: Lock },
 ]
 
 export function AppSidebar() {
