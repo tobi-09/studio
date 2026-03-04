@@ -1,3 +1,16 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "hero",
+      "description": "Modern high-tech school hallway",
+      "imageUrl": "https://images.unsplash.com/photo-1770146605172-78e87ec088d1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw5fHxtb2Rlcm4lMjBzY2hvb2x8ZW58MHx8fHwxNzcyNTQwMDE0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "modern school"
+    },
+    {
+      "id": "node",
+      "description": "Smart switch NFC node",
+      "imageUrl": "https://picsum.photos/seed/edunode/400/400",
+      "imageHint": "smart hardware"
+    }
+  ]
 }
