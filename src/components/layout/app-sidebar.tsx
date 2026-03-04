@@ -3,14 +3,14 @@
 
 import * as React from "react"
 import {
-  LayoutDashboard,
   ShieldAlert,
-  BarChart3,
-  UserCheck,
-  Zap,
   Info,
   PhoneCall,
   Mail,
+  HardDrive,
+  CreditCard,
+  Layers,
+  Zap,
 } from "lucide-react"
 
 import {
@@ -28,9 +28,10 @@ import { usePathname } from "next/navigation"
 
 const navigation = [
   { name: "O produktu", href: "/", icon: Info },
-  { name: "Docházka (Demo)", href: "/fraud-check", icon: UserCheck },
-  { name: "Zabezpečení (Demo)", href: "/security", icon: ShieldAlert },
-  { name: "Analytika (Demo)", href: "/analytics", icon: BarChart3 },
+  { name: "Hardware & Balíčky", href: "/#pricing", icon: CreditCard },
+  { name: "Jak to funguje", href: "/how-it-works", icon: HardDrive },
+  { name: "Integrace Bakaláři", icon: Layers, href: "/integration" },
+  { name: "Bezpečnost HW", href: "/hardware-security", icon: ShieldAlert },
 ]
 
 export function AppSidebar() {
@@ -78,13 +79,13 @@ export function AppSidebar() {
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors cursor-pointer px-1">
               <Mail className="h-4 w-4" />
-              <span>info@edugate.cz</span>
+              <span>obchod@edugate.cz</span>
             </div>
           </div>
           <div className="mt-2 p-3 rounded-lg border bg-card shadow-sm">
             <div className="flex flex-col overflow-hidden">
-              <span className="text-xs font-semibold">Aktuální verze v3.4</span>
-              <span className="text-[10px] text-muted-foreground">Pravidelně aktualizováno</span>
+              <span className="text-xs font-semibold">Prodejní verze 2024</span>
+              <span className="text-[10px] text-muted-foreground">Hardwarová divize</span>
             </div>
           </div>
         </div>
