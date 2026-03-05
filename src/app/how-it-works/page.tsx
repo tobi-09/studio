@@ -1,7 +1,8 @@
+
 "use client"
 
 import React from "react"
-import { HardDrive, Server, ShieldCheck, Zap, Laptop, Bell, ShieldAlert } from "lucide-react"
+import { HardDrive, Server, ShieldCheck, Zap, Laptop, Bell, ShieldAlert, Fingerprint, UserCheck } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 
@@ -43,6 +44,33 @@ export default function HowItWorks() {
         </Card>
       </div>
 
+      <div className="bg-secondary text-secondary-foreground p-8 rounded-3xl shadow-xl space-y-6">
+        <div className="flex items-center gap-4">
+          <Fingerprint className="h-10 w-10" />
+          <h2 className="text-2xl font-bold font-headline">Stop podvodům: Jak to funguje v praxi?</h2>
+        </div>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold flex items-center gap-2">
+              <Zap className="h-5 w-5" />
+              Náhodná výzva
+            </h3>
+            <p className="text-sm opacity-90 leading-relaxed">
+              V náhodně vybraný čas (např. 10 minut po začátku hodiny) se v Bakalářích učiteli zobrazí výzva k potvrzení počtu studentů. Učitel jen letmo spočítá hlavy a zadá číslo.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <h3 className="text-lg font-bold flex items-center gap-2">
+              <ShieldAlert className="h-5 w-5" />
+              Okamžitá detekce
+            </h3>
+            <p className="text-sm opacity-90 leading-relaxed">
+              Pokud systém eviduje 25 "pípnutí", ale učitel zadá 23 studentů, EduGate okamžitě vyhodnotí, že někdo pípá za spolužáky. Plugin v Bakalářích ihned označí podezřelé záznamy pro následnou kontrolu.
+            </p>
+          </div>
+        </div>
+      </div>
+
       <Alert className="bg-orange-50 border-orange-200">
         <ShieldAlert className="h-4 w-4 text-orange-600" />
         <AlertTitle className="text-orange-800">Chytrá prevence "černých pasažérů"</AlertTitle>
@@ -51,8 +79,8 @@ export default function HowItWorks() {
         </AlertDescription>
       </Alert>
 
-      <div className="p-8 rounded-3xl bg-muted border space-y-6">
-        <h2 className="text-2xl font-bold text-center">Proces integrace</h2>
+      <div className="p-8 rounded-3xl bg-muted border space-y-6 text-center">
+        <h2 className="text-2xl font-bold">Proces integrace</h2>
         <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
           <div className="flex flex-col items-center text-center max-w-[150px]">
             <div className="h-12 w-12 rounded-full bg-white shadow-sm flex items-center justify-center mb-2"><HardDrive className="text-primary" /></div>

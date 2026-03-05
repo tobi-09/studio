@@ -1,17 +1,19 @@
+
 "use client"
 
 import React from "react"
 import { 
   Zap, 
   ShieldCheck, 
-  Settings, 
   CheckCircle2, 
   ArrowRight,
   HardDrive,
   Lock,
   DoorOpen,
   Fingerprint,
-  BellRing
+  BellRing,
+  AlertTriangle,
+  UserCheck
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -55,7 +57,7 @@ export default function LandingPage() {
       </section>
 
       {/* Pricing / Packages */}
-      <section id="pricing" className="px-4 space-y-12 pb-12">
+      <section id="pricing" className="px-4 space-y-12">
         <div className="text-center space-y-4">
           <h2 className="text-4xl font-bold font-headline">Naše plány nasazení</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -76,8 +78,8 @@ export default function LandingPage() {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Hardware:</b> Samostatná NFC čtečka do každé třídy.</span></li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Instalace:</b> Do běžné zásuvky nebo přímo do vypínače světel.</span></li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Notifikace:</b> Upozornění na žáky v budově, kteří nejsou v hodině.</span></li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Software:</b> Okamžitý přenos pípnutí do Bakalářů.</span></li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Výhoda:</b> Učitel nemusí ručně odklikávat 30 žáků.</span></li>
               </ul>
             </CardContent>
             <CardFooter>
@@ -121,14 +123,63 @@ export default function LandingPage() {
               <ul className="space-y-3 text-sm">
                 <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Smart Zámky:</b> Přístup do kabinetů povolen jen v určené časy.</span></li>
                 <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Jídelna & Knihovna:</b> Automatizovaný výdej a evidence.</span></li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Audit:</b> Historie pohybu pro případy krádeží nebo poškození majetku.</span></li>
-                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Časové sloty:</b> Vstup jen konkrétním třídám dle rozvrhu.</span></li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Audit:</b> Historie pohybu pro případy krádeží.</span></li>
+                <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5" /> <span><b>Časové sloty:</b> Vstup dle rozvrhu.</span></li>
               </ul>
             </CardContent>
             <CardFooter>
               <Button className="w-full" variant="outline">Kontaktovat specialistu</Button>
             </CardFooter>
           </Card>
+        </div>
+      </section>
+
+      {/* Stop Podvodům Section */}
+      <section className="px-4 py-12 bg-secondary/5 rounded-3xl border border-secondary/20">
+        <div className="max-w-4xl mx-auto space-y-8">
+          <div className="flex items-center gap-4 justify-center text-center">
+            <div className="h-12 w-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center">
+              <ShieldCheck className="h-8 w-8" />
+            </div>
+            <h2 className="text-3xl font-bold font-headline">Stop podvodům: Inteligentní kontrola</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <p className="text-lg leading-relaxed font-medium">
+                Naše čtečky nejsou jen pasivní sběrače dat. Systém v náhodný čas vyzve učitele k ručnímu zápisu počtu žáků přímo v rozhraní Bakalářů.
+              </p>
+              <div className="bg-white p-4 rounded-xl border-l-4 border-secondary shadow-sm space-y-2">
+                <div className="flex items-center gap-2 text-secondary font-bold">
+                  <UserCheck className="h-5 w-5" />
+                  <span>Náhodná verifikace</span>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Pokud počet „pípnutí“ nesouhlasí s počtem lidí ve třídě, systém okamžitě odhalí zneužitou kartu a zašle notifikaci vedení školy.
+                </p>
+              </div>
+            </div>
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-secondary to-primary rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+              <div className="relative bg-white border rounded-2xl p-6 shadow-xl flex flex-col gap-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Systémové hlášení</span>
+                  <Badge variant="destructive" className="animate-pulse">Nesoulad detekován</Badge>
+                </div>
+                <div className="space-y-3">
+                  <div className="h-2 w-full bg-muted rounded-full overflow-hidden">
+                    <div className="h-full bg-secondary w-3/4"></div>
+                  </div>
+                  <div className="flex justify-between text-xs font-bold">
+                    <span>Pípnutí: 24</span>
+                    <span>Fyzicky: 22</span>
+                  </div>
+                </div>
+                <p className="text-xs text-muted-foreground italic">
+                  "Podezření na kartu v zastoupení. Žák ID: S042 a S015 nebyli fyzicky potvrzeni."
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

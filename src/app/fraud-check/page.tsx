@@ -1,3 +1,4 @@
+
 "use client"
 
 import React, { useState } from "react"
@@ -27,13 +28,13 @@ export default function AntiFraudPage() {
     if (fraudCases.length > 0) {
       toast({
         variant: "destructive",
-        title: "Fraud Detected!",
-        description: `${fraudCases.length} potential card misuse case(s) found. Logging event for discipline.`
+        title: "Podvod odhalen!",
+        description: `Detekováno ${fraudCases.length} zneužití karty. Událost byla nahlášena vedení.`
       })
     } else {
       toast({
-        title: "Check Complete",
-        description: "Attendance records verified and synchronized with NFC data."
+        title: "Kontrola dokončena",
+        description: "Záznamy NFC odpovídají fyzické přítomnosti."
       })
     }
   }
@@ -42,28 +43,28 @@ export default function AntiFraudPage() {
     <div className="max-w-5xl mx-auto space-y-6">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight font-headline">Anti-Fraud Verification</h1>
-          <p className="text-muted-foreground">Cross-reference NFC taps with physical classroom presence.</p>
+          <h1 className="text-3xl font-bold tracking-tight font-headline">Demo: Stop Podvodům</h1>
+          <p className="text-muted-foreground">Ukázka toho, jak učitel v Bakalářích provádí náhodnou kontrolu.</p>
         </div>
         <Button onClick={checkResults} className="bg-secondary hover:bg-secondary/90 shadow-md">
           <Fingerprint className="mr-2 h-4 w-4" />
-          Complete Check
+          Dokončit kontrolu
         </Button>
       </div>
 
       <div className="grid gap-6 md:grid-cols-3">
         <Card className="md:col-span-2">
           <CardHeader>
-            <CardTitle>Manual Enrollment Check</CardTitle>
-            <CardDescription>Confirm the students physically sitting in the room.</CardDescription>
+            <CardTitle>Manuální verifikace (Náhodná výzva)</CardTitle>
+            <CardDescription>Potvrďte studenty, které fyzicky vidíte ve třídě.</CardDescription>
           </CardHeader>
           <CardContent>
             <Table>
               <TableHeader>
                 <TableRow>
-                  <TableHead>Student Name</TableHead>
+                  <TableHead>Jméno studenta</TableHead>
                   <TableHead>NFC Status</TableHead>
-                  <TableHead className="text-right">Teacher Confirmation</TableHead>
+                  <TableHead className="text-right">Fyzicky přítomen?</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -73,11 +74,11 @@ export default function AntiFraudPage() {
                     <TableCell>
                       {student.nfcPresent ? (
                         <Badge variant="secondary" className="bg-green-100 text-green-700 hover:bg-green-100">
-                          <Check className="mr-1 h-3 w-3" /> Tapped
+                          <Check className="mr-1 h-3 w-3" /> Pípnuto
                         </Badge>
                       ) : (
                         <Badge variant="outline" className="text-muted-foreground">
-                          <X className="mr-1 h-3 w-3" /> No Entry
+                          <X className="mr-1 h-3 w-3" /> Nepípnuto
                         </Badge>
                       )}
                     </TableCell>
@@ -89,7 +90,7 @@ export default function AntiFraudPage() {
                           className={student.teacherPresent === true ? "bg-primary" : ""}
                           onClick={() => handleVerify(student.id, true)}
                         >
-                          <UserCheck className="h-4 w-4" />
+                          <Check className="h-4 w-4" />
                         </Button>
                         <Button 
                           size="sm" 
@@ -110,20 +111,20 @@ export default function AntiFraudPage() {
         <div className="space-y-6">
           <Card className="border-secondary/30 bg-secondary/5 shadow-inner">
             <CardHeader>
-              <CardTitle className="text-lg">Instructions</CardTitle>
+              <CardTitle className="text-lg">Instrukce</CardTitle>
             </CardHeader>
             <CardContent className="space-y-4 text-sm">
               <div className="flex gap-3">
                 <div className="mt-1 h-4 w-4 text-secondary"><Check className="h-full w-full" /></div>
-                <p>Visually identify each student in the class.</p>
+                <p>Učitel provede vizuální kontrolu třídy.</p>
               </div>
               <div className="flex gap-3">
                 <div className="mt-1 h-4 w-4 text-secondary"><Fingerprint className="h-full w-full" /></div>
-                <p>If a student is present physically but NFC says "No Entry", they likely forgot their card.</p>
+                <p>Systém automaticky porovná zadaná data s NFC logy z brány u vchodu a třídy.</p>
               </div>
               <div className="flex gap-3">
                 <div className="mt-1 h-4 w-4 text-destructive"><ShieldAlert className="h-4 w-4" /></div>
-                <p><b>Fraud Case:</b> If NFC says "Tapped" but student is <b>not</b> here, a peer likely tapped for them.</p>
+                <p><b>Odhalení podvodu:</b> Pokud má student pípnuto, ale není ve třídě, karta je zneužita spolužákem.</p>
               </div>
             </CardContent>
           </Card>
@@ -132,12 +133,12 @@ export default function AntiFraudPage() {
             <CardHeader className="pb-2">
               <CardTitle className="text-orange-800 flex items-center gap-2">
                 <AlertTriangle className="h-5 w-5" />
-                Wait...
+                Důležité
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-xs text-orange-700">
-                Found a discrepancy? EduGate Hub automatically generates a report for school administration and invalidates the session record for that student.
+                Náhodné výzvy zvyšují disciplínu studentů o 80 %. Nikdy neví, kdy systém požádá učitele o přepočítání.
               </p>
             </CardContent>
           </Card>
