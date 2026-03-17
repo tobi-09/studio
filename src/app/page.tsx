@@ -11,7 +11,8 @@ import {
   Bell,
   HardDrive,
   ShieldAlert,
-  Users
+  Users,
+  AlertTriangle
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -57,90 +58,52 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* SYSTÉMOVÁ VÝZVA - New Component */}
+      {/* DETEKCE PODVODU - Visual Component Replacement */}
       <section className="px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 text-white p-8 shadow-2xl border-4 border-primary/30">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-              <ShieldAlert className="h-32 w-32" />
-            </div>
-            <div className="relative space-y-6">
-              <div className="flex items-center gap-3">
-                <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse" />
-                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary-foreground/70">A SYSTÉMOVÁ VÝZVA</span>
-              </div>
-              
-              <div className="space-y-2">
-                <h2 className="text-2xl md:text-4xl font-bold font-headline">Kontrola přítomnosti (EduGate)</h2>
-                <p className="text-slate-400 text-lg leading-relaxed">
-                  Právě probíhá náhodná verifikace docházky. Prosíme učitele o potvrzení fyzického stavu žáků ve třídě.
-                </p>
-              </div>
-
-              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pt-4 border-t border-white/10">
-                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
-                  <Users className="h-8 w-8 text-primary" />
+          <div className="relative overflow-hidden rounded-[2rem] bg-white border-4 border-destructive/20 shadow-2xl p-1 md:p-8">
+            <div className="bg-slate-50 rounded-[1.5rem] p-6 md:p-10 border border-slate-200">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="bg-slate-900 p-2 rounded-lg">
+                    <ShieldAlert className="h-6 w-6 text-white" />
+                  </div>
                   <div>
-                    <p className="text-[10px] uppercase font-bold text-slate-500">Aktuální stav v systému</p>
-                    <p className="text-xl font-black">24 přihlášených karet</p>
+                    <h2 className="text-sm font-black uppercase tracking-[0.2em] text-slate-500">Bezpečnostní systém</h2>
+                    <p className="text-xs text-slate-400">EduGate Hub Core v2.4</p>
                   </div>
                 </div>
-                <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-14 px-8 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.5)]">
-                  Provést fyzickou kontrolu
-                </Button>
+                <Badge variant="destructive" className="animate-pulse px-4 py-1 text-sm font-bold shadow-lg shadow-destructive/20 uppercase tracking-widest">
+                  DETEKCE PODVODU
+                </Badge>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Stop Podvodům Section */}
-      <section className="px-4 py-20 bg-primary text-primary-foreground rounded-[3rem] shadow-2xl mx-4">
-        <div className="max-w-5xl mx-auto space-y-12">
-          <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-white border-white/40 font-bold px-4 py-1">UNIKÁTNÍ FUNKCE PRO VŠECHNY PLÁNY</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Stop podvodům: Inteligentní kontrola</h2>
-            <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Technologie EduGate aktivně hlídá disciplínu studentů pomocí systému náhodných verifikací.
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6 bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-md">
-              <div className="flex items-center gap-4 text-white font-black text-2xl">
-                <Fingerprint className="h-8 w-8 text-green-300" />
-                <span>Náhodná výzva učiteli</span>
-              </div>
-              <p className="text-lg opacity-80 leading-relaxed">
-                V náhodný čas během vyučování systém automaticky vyzve učitele k ručnímu zápisu počtu žáků (např. v Bakalářích).
-              </p>
-              <ul className="space-y-4">
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-300 mt-1 shrink-0" />
-                  <span><b>Okamžitá kontrola:</b> Pokud počet „pípnutí“ nesouhlasí se zadaným počtem, systém ihned detekuje zneužití karty.</span>
-                </li>
-                <li className="flex gap-3 items-start">
-                  <CheckCircle2 className="h-5 w-5 text-green-300 mt-1 shrink-0" />
-                  <span><b>Automatický Report:</b> Podezřelé karty jsou okamžitě nahlášeny vedení školy k vyřešení.</span>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="relative transform hover:scale-105 transition-transform duration-500">
-              <div className="absolute -inset-4 bg-white/20 rounded-[2rem] blur-3xl"></div>
-              <div className="relative bg-white text-foreground border rounded-[2.5rem] p-8 shadow-2xl">
-                <div className="flex items-center justify-between mb-8">
-                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">Bezpečnostní systém</span>
-                  <Badge variant="destructive" className="animate-pulse px-3">DETEKCE PODVODU</Badge>
-                </div>
-                <div className="space-y-6">
-                  <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/20">
-                    <p className="text-sm font-bold text-destructive">Nalezen nesoulad v 3.B</p>
-                    <p className="text-xs text-muted-foreground mt-1">Pípnutí: 24 | Fyzicky potvrzeno: 22</p>
+              <div className="space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-2xl bg-destructive/10 flex items-center justify-center shrink-0">
+                    <AlertTriangle className="h-6 w-6 text-destructive" />
                   </div>
-                  <p className="text-sm italic text-muted-foreground leading-relaxed">
-                    "Karty žáků S042 a S015 jsou v systému označeny jako přítomné, ale učitel je fyzicky nepotvrdil. Karta byla pravděpodobně ponechána u spolužáka."
-                  </p>
+                  <div className="space-y-1">
+                    <h3 className="text-2xl font-bold text-slate-900">Nalezen nesoulad v 3.B</h3>
+                    <div className="flex items-center gap-3 text-lg">
+                      <span className="font-semibold text-slate-600">Pípnutí: <span className="text-slate-900">24</span></span>
+                      <span className="text-slate-300">|</span>
+                      <span className="font-semibold text-slate-600">Fyzicky potvrzeno: <span className="text-destructive font-black">22</span></span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white p-6 rounded-2xl border-l-4 border-destructive shadow-sm italic text-slate-700 leading-relaxed text-lg">
+                  "Karty žáků <span className="font-bold text-slate-900 underline decoration-destructive/30">S042</span> a <span className="font-bold text-slate-900 underline decoration-destructive/30">S015</span> jsou v systému označeny jako přítomné, ale učitel je fyzicky nepotvrdil. Karta byla pravděpodobně ponechána u spolužáka."
+                </div>
+
+                <div className="flex flex-wrap gap-4 pt-4">
+                  <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold">
+                    Zobrazit logy čtečky
+                  </Button>
+                  <Button className="rounded-xl bg-destructive hover:bg-destructive/90 text-white h-12 px-6 font-bold shadow-lg shadow-destructive/20">
+                    Nahlásit zneužití karty
+                  </Button>
                 </div>
               </div>
             </div>
