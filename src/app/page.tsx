@@ -7,7 +7,6 @@ import {
   CheckCircle2, 
   ArrowRight,
   Lock,
-  DoorOpen,
   Fingerprint,
   UserCheck,
   Bell,
@@ -52,17 +51,6 @@ export default function LandingPage() {
               className="w-full h-auto object-cover aspect-video lg:aspect-square"
               data-ai-hint="smart school technology"
             />
-          </div>
-          <div className="absolute -bottom-6 -left-2 bg-white p-4 rounded-2xl shadow-xl border hidden md:block">
-            <div className="flex items-center gap-3">
-              <div className="h-12 w-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold">
-                <ShieldCheck className="h-6 w-6" />
-              </div>
-              <div className="text-sm">
-                <p className="font-black leading-none">Certifikovaná integrace</p>
-                <p className="text-muted-foreground text-xs mt-1">Plně kompatibilní s Bakaláři</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
