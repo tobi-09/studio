@@ -52,7 +52,6 @@ export default function LandingPage() {
               data-ai-hint="smart school technology"
             />
           </div>
-          {/* Floating Stats */}
           <div className="absolute -bottom-6 -left-2 bg-white p-4 rounded-2xl shadow-xl border hidden md:block">
             <div className="flex items-center gap-3">
               <div className="h-12 w-12 bg-green-100 text-green-600 rounded-full flex items-center justify-center font-bold">

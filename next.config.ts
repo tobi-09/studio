@@ -2,6 +2,9 @@ import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
   output: 'export',
+  basePath: '/studio',
+  assetPrefix: '/studio',
+  trailingSlash: true,
   images: {
     unoptimized: true,
     remotePatterns: [
