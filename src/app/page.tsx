@@ -68,7 +68,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6 bg-white/10 p-8 rounded-3xl border border-white/20 backdrop-blur-md">
               <div className="flex items-center gap-4 text-white font-black text-2xl">
-                <UserCheck className="h-8 w-8 text-green-300" />
+                <Fingerprint className="h-8 w-8 text-green-300" />
                 <span>Náhodná výzva učiteli</span>
               </div>
               <p className="text-lg opacity-80 leading-relaxed">
