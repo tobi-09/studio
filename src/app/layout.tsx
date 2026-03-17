@@ -26,13 +26,13 @@ export default function RootLayout({
           <main className="flex-1">
             {children}
           </main>
-          <footer className="border-t py-12 bg-white">
+          <footer className="border-t py-12 bg-white mt-20">
             <div className="max-w-7xl mx-auto px-4 text-center space-y-4">
               <div className="font-bold text-xl text-primary">EduGate Hub</div>
-              <p className="text-sm text-muted-foreground">© 2024 EduGate Hardware Divize. Všechna práva vyhrazena.</p>
+              <p className="text-sm text-muted-foreground">© 2024 EduGate Hardware Divize. Všechna práva vyzrazena.</p>
               <div className="flex justify-center gap-6 text-sm text-muted-foreground">
-                <a href="mailto:obchod@edugate.cz" className="hover:text-primary transition-colors">obchod@edugate.cz</a>
-                <a href="tel:+420800123456" className="hover:text-primary transition-colors">+420 800 123 456</a>
+                <a href="mailto:obchod@edugate.cz" className="hover:text-primary transition-colors font-medium">obchod@edugate.cz</a>
+                <a href="tel:+420800123456" className="hover:text-primary transition-colors font-medium">+420 800 123 456</a>
               </div>
             </div>
           </footer>
