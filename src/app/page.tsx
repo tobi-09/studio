@@ -60,14 +60,23 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* SYSTÉMOVÁ VÝZVA - Nahrazeno obrázkem */}
+      {/* SYSTÉMOVÁ VÝZVA - Zobrazení nahraného obrázku */}
       <section className="px-4">
         <div className="max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
+            {/* Používáme absolutní cestu včetně basePath /studio/ pro GitHub Pages */}
             <img 
               src="/studio/img/oznamení.png" 
               alt="Systémová výzva: Kontrola přítomnosti EduGate" 
               className="w-full h-auto block"
+              onError={(e) => {
+                // Fallback pokud by se cesta /studio/ nezdařila
+                const target = e.target as HTMLImageElement;
+                if (!target.src.includes('basePath_failed')) {
+                  target.src = 'img/oznamení.png';
+                  (target as any).basePath_failed = true;
+                }
+              }}
             />
           </div>
         </div>
