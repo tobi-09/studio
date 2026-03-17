@@ -13,7 +13,9 @@ import {
   HardDrive,
   ShieldAlert,
   Users,
-  AlertTriangle
+  AlertTriangle,
+  Clock,
+  Shield
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -67,6 +69,57 @@ export default function LandingPage() {
               alt="Systémová výzva: Kontrola přítomnosti EduGate" 
               className="w-full h-auto block"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* UNIKÁTNÍ FUNKCE PRO VŠECHNY PLÁNY */}
+      <section className="px-4 py-16 bg-blue-50/50 rounded-[3rem] border border-blue-100">
+        <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div className="space-y-4">
+            <Badge variant="outline" className="border-primary/50 text-primary font-bold">UNIKÁTNÍ FUNKCE PRO VŠECHNY PLÁNY</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold font-headline tracking-tight">Stop podvodům: Inteligentní kontrola</h2>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              Technologie EduGate aktivně hlídá disciplínu studentů pomocí systému náhodných verifikací.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <Card className="border-none shadow-sm bg-white">
+              <CardHeader>
+                <Clock className="h-8 w-8 text-primary mb-2" />
+                <CardTitle className="text-xl">Náhodná výzva učiteli</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  V náhodný čas během vyučování systém automaticky vyzve učitele k ručnímu zápisu počtu žáků.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-sm bg-white">
+              <CardHeader>
+                <Shield className="h-8 w-8 text-green-600 mb-2" />
+                <CardTitle className="text-xl">Okamžitá kontrola</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Pokud počet „pípnutí“ nesouhlasí se zadaným počtem, systém ihned detekuje podvod.
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="border-none shadow-sm bg-white md:col-span-2 lg:col-span-1">
+              <CardHeader>
+                <ShieldAlert className="h-8 w-8 text-red-500 mb-2" />
+                <CardTitle className="text-xl">Automatický Report</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">
+                  Zneužitá karta je okamžitě nahlášena vedení školy k vyřešení.
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
