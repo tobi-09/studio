@@ -1,10 +1,5 @@
-'use server';
 /**
  * @fileOverview Provides an AI-generated summary of classroom attendance for teachers.
- *
- * - teacherAttendanceSummary - A function that generates an attendance summary for a teacher.
- * - TeacherAttendanceSummaryInput - The input type for the teacherAttendanceSummary function.
- * - TeacherAttendanceSummaryOutput - The return type for the teacherAttendanceSummary function.
  */
 
 import {ai} from '@/ai/genkit';
@@ -27,51 +22,6 @@ const TeacherAttendanceSummaryOutputSchema = z.object({
 export type TeacherAttendanceSummaryOutput = z.infer<typeof TeacherAttendanceSummaryOutputSchema>;
 
 export async function teacherAttendanceSummary(input: TeacherAttendanceSummaryInput): Promise<TeacherAttendanceSummaryOutput> {
-  return teacherAttendanceSummaryFlow(input);
+  // Demo mode for static site
+  return { summary: "AI souhrn je dostupný v plné verzi systému propojené s Hubem." };
 }
-
-const prompt = ai.definePrompt({
-  name: 'teacherAttendanceSummaryPrompt',
-  input: {schema: TeacherAttendanceSummaryInputSchema},
-  output: {schema: TeacherAttendanceSummaryOutputSchema},
-  prompt: `Hello Teacher {{teacherName}}! Here's the attendance summary for your class: {{className}}.
-
-Present Students ({{presentStudents.length}}):
-{{#if presentStudents}}
-  {{#each presentStudents}}- {{this}}
-  {{/each}}
-{{else}}
-  No students currently marked as present.
-{{/if}}
-
-Absent Students ({{absentStudents.length}}):
-{{#if absentStudents}}
-  {{#each absentStudents}}- {{this}}
-  {{/each}}
-{{else}}
-  All expected students are present or no absent students to report.
-{{/if}}
-
-Important Alert: Students in the building but not in your class:
-{{#if inBuildingStudents}}
-  The following students are in the school building but have not yet tapped into this class. Please investigate if they should be here:
-  {{#each inBuildingStudents}}- {{this}}
-  {{/each}}
-{{else}}
-  No students detected in the building but absent from this class.
-{{/if}}
-
-Please review and address any discrepancies.`,
-});
-
-const teacherAttendanceSummaryFlow = ai.defineFlow(
-  {
-    name: 'teacherAttendanceSummaryFlow',
-    inputSchema: TeacherAttendanceSummaryInputSchema,
-    outputSchema: TeacherAttendanceSummaryOutputSchema,
-  },
-  async input => {
-    const {output} = await prompt(input);
-    return output!;
-  }
-);

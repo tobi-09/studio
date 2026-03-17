@@ -8,7 +8,8 @@ import {
   ArrowRight,
   Lock,
   Fingerprint,
-  Bell
+  Bell,
+  HardDrive
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
