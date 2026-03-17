@@ -9,11 +9,14 @@ import {
   Lock,
   Fingerprint,
   Bell,
-  HardDrive
+  HardDrive,
+  ShieldAlert,
+  Users
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import Link from "next/link"
 
 export default function LandingPage() {
@@ -50,6 +53,43 @@ export default function LandingPage() {
               className="w-full h-auto object-cover aspect-video lg:aspect-square"
               data-ai-hint="smart school technology"
             />
+          </div>
+        </div>
+      </section>
+
+      {/* SYSTÉMOVÁ VÝZVA - New Component */}
+      <section className="px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="relative overflow-hidden rounded-[2rem] bg-slate-900 text-white p-8 shadow-2xl border-4 border-primary/30">
+            <div className="absolute top-0 right-0 p-4 opacity-10">
+              <ShieldAlert className="h-32 w-32" />
+            </div>
+            <div className="relative space-y-6">
+              <div className="flex items-center gap-3">
+                <div className="h-3 w-3 rounded-full bg-red-500 animate-pulse" />
+                <span className="text-xs font-black uppercase tracking-[0.3em] text-primary-foreground/70">A SYSTÉMOVÁ VÝZVA</span>
+              </div>
+              
+              <div className="space-y-2">
+                <h2 className="text-2xl md:text-4xl font-bold font-headline">Kontrola přítomnosti (EduGate)</h2>
+                <p className="text-slate-400 text-lg leading-relaxed">
+                  Právě probíhá náhodná verifikace docházky. Prosíme učitele o potvrzení fyzického stavu žáků ve třídě.
+                </p>
+              </div>
+
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 pt-4 border-t border-white/10">
+                <div className="flex items-center gap-4 bg-white/5 p-4 rounded-2xl border border-white/10">
+                  <Users className="h-8 w-8 text-primary" />
+                  <div>
+                    <p className="text-[10px] uppercase font-bold text-slate-500">Aktuální stav v systému</p>
+                    <p className="text-xl font-black">24 přihlášených karet</p>
+                  </div>
+                </div>
+                <Button className="bg-primary hover:bg-primary/90 text-white font-bold h-14 px-8 rounded-xl shadow-[0_0_20px_rgba(59,130,246,0.5)]">
+                  Provést fyzickou kontrolu
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
