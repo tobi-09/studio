@@ -52,7 +52,7 @@ export default function RootLayout({
                   <a href="mailto:obchod@edugate.cz" className="hover:text-primary transition-colors font-medium">obchod@edugate.cz</a>
                   <a href="tel:+420800123456" className="hover:text-primary transition-colors font-medium">+420 800 123 456</a>
                 </div>
-                <p className="text-xs">© 2024 EduGate Hardware Divize. Všechna práva vyhrazena.</p>
+                <p className="text-xs">© 2024 EduGate Hardware Divize. Všechna práva vyzena.</p>
               </div>
             </div>
           </footer>

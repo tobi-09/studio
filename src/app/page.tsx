@@ -67,7 +67,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Stop Podvodům Section - KLÍČOVÁ FUNKCE */}
+      {/* Stop Podvodům Section */}
       <section className="px-4 py-20 bg-primary text-primary-foreground rounded-[3rem] shadow-2xl mx-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
@@ -94,7 +94,7 @@ export default function LandingPage() {
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-300 mt-1 shrink-0" />
-                  <span><b>Automatický Report:</b> Zneužitá karta je botem okamžitě nahlášena vedení školy k vyřešení.</span>
+                  <span><b>Automatický Report:</b> Zneužitá karta je okamžitě nahlášena vedení školy k vyřešení.</span>
                 </li>
               </ul>
             </div>
@@ -103,7 +103,7 @@ export default function LandingPage() {
               <div className="absolute -inset-4 bg-white/20 rounded-[2rem] blur-3xl"></div>
               <div className="relative bg-white text-foreground border rounded-[2.5rem] p-8 shadow-2xl">
                 <div className="flex items-center justify-between mb-8">
-                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">Bezpečnostní bot</span>
+                  <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">Bezpečnostní systém</span>
                   <Badge variant="destructive" className="animate-pulse px-3">ALARM: ZNEUŽITÁ KARTA</Badge>
                 </div>
                 <div className="space-y-6">
@@ -196,7 +196,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Trust / Integration */}
+      {/* Trust Section */}
       <section className="py-20 px-4 bg-muted/30 rounded-[3rem]">
         <div className="max-w-4xl mx-auto text-center space-y-10">
           <div className="space-y-4">
