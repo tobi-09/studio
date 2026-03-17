@@ -10,7 +10,8 @@ import {
   DoorOpen,
   Fingerprint,
   UserCheck,
-  Bell
+  Bell,
+  ExternalLink
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -70,10 +71,10 @@ export default function LandingPage() {
       <section className="px-4 py-20 bg-primary text-primary-foreground rounded-[3rem] shadow-2xl mx-4">
         <div className="max-w-5xl mx-auto space-y-12">
           <div className="text-center space-y-4">
-            <Badge variant="outline" className="text-white border-white/40 font-bold px-4 py-1">UNIKÁTNÍ FUNKCE</Badge>
+            <Badge variant="outline" className="text-white border-white/40 font-bold px-4 py-1">UNIKÁTNÍ FUNKCE PRO VŠECHNY PLÁNY</Badge>
             <h2 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Stop podvodům: Inteligentní kontrola</h2>
             <p className="text-xl opacity-90 max-w-3xl mx-auto">
-              Technologie EduGate aktivně hlídá disciplínu studentů pomocí systému náhodných verifikací ve všech plánech.
+              Technologie EduGate aktivně hlídá disciplínu studentů pomocí systému náhodných verifikací.
             </p>
           </div>
           
