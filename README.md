@@ -1,5 +1,5 @@
-# Firebase Studio
+# EduGate Hub - Oficiální Web
 
-This is a NextJS starter in Firebase Studio.
+Tento repozitář obsahuje prodejní prezentaci projektu EduGate Hub, hardwarového rozšíření pro systém Bakaláři.
 
-To get started, take a look at src/app/page.tsx.
+Web je automaticky nasazen na adrese: [https://tobi-09.github.io/studio/](https://tobi-09.github.io/studio/)

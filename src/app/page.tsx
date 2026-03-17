@@ -8,7 +8,6 @@ import {
   ArrowRight,
   Lock,
   Fingerprint,
-  UserCheck,
   Bell
 } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
@@ -20,8 +19,8 @@ export default function LandingPage() {
   return (
     <div className="flex flex-col gap-24 py-12 md:py-20 max-w-7xl mx-auto overflow-x-hidden">
       {/* Hero Section */}
-      <section className="flex flex-col lg:flex-row items-center gap-12 px-4">
-        <div className="flex-1 space-y-8 text-center lg:text-left">
+      <section className="flex flex-col lg:flex-row items-center gap-12 px-4 text-center lg:text-left">
+        <div className="flex-1 space-y-8">
           <div className="space-y-4">
             <Badge className="bg-primary/10 text-primary hover:bg-primary/10 px-4 py-1.5 text-sm border-primary/20 font-bold">
               Hardwarový plugin pro Bakaláře
@@ -72,16 +71,16 @@ export default function LandingPage() {
                 <span>Náhodná výzva učiteli</span>
               </div>
               <p className="text-lg opacity-80 leading-relaxed">
-                V náhodný čas během vyučování systém automaticky vyzve učitele k ručnímu zápisu počtu žáků.
+                V náhodný čas během vyučování systém automaticky vyzve učitele k ručnímu zápisu počtu žáků (např. v Bakalářích).
               </p>
               <ul className="space-y-4">
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-300 mt-1 shrink-0" />
-                  <span><b>Okamžitá kontrola:</b> Pokud počet „pípnutí“ nesouhlasí se zadaným počtem, systém ihned detekuje podvod.</span>
+                  <span><b>Okamžitá kontrola:</b> Pokud počet „pípnutí“ nesouhlasí se zadaným počtem, systém ihned detekuje zneužití karty.</span>
                 </li>
                 <li className="flex gap-3 items-start">
                   <CheckCircle2 className="h-5 w-5 text-green-300 mt-1 shrink-0" />
-                  <span><b>Automatický Report:</b> Zneužitá karta je okamžitě nahlášena vedení školy k vyřešení.</span>
+                  <span><b>Automatický Report:</b> Podezřelé karty jsou okamžitě nahlášeny vedení školy k vyřešení.</span>
                 </li>
               </ul>
             </div>
@@ -91,15 +90,15 @@ export default function LandingPage() {
               <div className="relative bg-white text-foreground border rounded-[2.5rem] p-8 shadow-2xl">
                 <div className="flex items-center justify-between mb-8">
                   <span className="text-[10px] font-black text-muted-foreground uppercase tracking-[0.2em]">Bezpečnostní systém</span>
-                  <Badge variant="destructive" className="animate-pulse px-3">ALARM: ZNEUŽITÁ KARTA</Badge>
+                  <Badge variant="destructive" className="animate-pulse px-3">DETEKCE PODVODU</Badge>
                 </div>
                 <div className="space-y-6">
                   <div className="p-4 rounded-xl bg-destructive/10 border border-destructive/20">
                     <p className="text-sm font-bold text-destructive">Nalezen nesoulad v 3.B</p>
-                    <p className="text-xs text-muted-foreground mt-1">Pípnutí: 24 | Fyzicky: 22</p>
+                    <p className="text-xs text-muted-foreground mt-1">Pípnutí: 24 | Fyzicky potvrzeno: 22</p>
                   </div>
                   <p className="text-sm italic text-muted-foreground leading-relaxed">
-                    "Uživatelé ID: S042 a S015 jsou v systému označeni jako přítomní, ale učitel je fyzicky nepotvrdil. Karta pravděpodobně ponechána u spolužáka."
+                    "Karty žáků S042 a S015 jsou v systému označeny jako přítomné, ale učitel je fyzicky nepotvrdil. Karta byla pravděpodobně ponechána u spolužáka."
                   </p>
                 </div>
               </div>
@@ -118,7 +117,6 @@ export default function LandingPage() {
         </div>
         
         <div className="grid gap-8 md:grid-cols-3">
-          {/* Package 1: STANDARD */}
           <Card className="flex flex-col border-2 hover:border-primary/50 transition-all bg-white shadow-sm hover:shadow-xl rounded-[2rem]">
             <CardHeader className="pb-8">
               <Badge className="w-fit mb-4 font-bold" variant="outline">Základní</Badge>
@@ -126,11 +124,10 @@ export default function LandingPage() {
               <p className="text-primary font-black text-sm uppercase tracking-wider">Rychlá třídnice</p>
             </CardHeader>
             <CardContent className="flex-1 space-y-6">
-              <p className="text-sm text-muted-foreground">Cíl: Maximální úspora času učitele při zápisu docházky bez zásahu do budovy.</p>
               <ul className="space-y-4 text-sm">
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>HW:</b> NFC čtečka do každé třídy (zásuvka/vypínač).</span></li>
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Notifikace:</b> Varování u žáků, kteří jsou v budově, ale ne v hodině.</span></li>
-                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Stop podvodům:</b> Systém náhodných verifikací.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Hardware:</b> NFC čtečka do každé třídy.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Notifikace:</b> Upozornění na žáky v budově, kteří nejsou v hodině.</span></li>
+                <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Stop podvodům:</b> Systém náhodných verifikací v ceně.</span></li>
               </ul>
             </CardContent>
             <CardFooter className="pt-6">
@@ -138,7 +135,6 @@ export default function LandingPage() {
             </CardFooter>
           </Card>
 
-          {/* Package 2: GATEKEEPER */}
           <Card className="flex flex-col border-2 border-primary shadow-2xl md:scale-105 relative bg-white z-10 rounded-[2rem]">
             <div className="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold px-4 py-1.5 rounded-bl-xl uppercase tracking-widest">Doporučujeme</div>
             <CardHeader className="pb-8">
@@ -147,7 +143,6 @@ export default function LandingPage() {
               <p className="text-secondary font-black text-sm uppercase tracking-wider">Bezpečný areál</p>
             </CardHeader>
             <CardContent className="flex-1 space-y-6">
-              <p className="text-sm text-muted-foreground">Cíl: Kontrola vstupu do budovy a pokročilá prevence "černých pasažérů".</p>
               <div className="bg-muted/50 p-3 rounded-xl border border-dashed text-[10px] font-black text-muted-foreground text-center uppercase tracking-tighter">Obsahuje vše z Plánu STANDARD</div>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>HW:</b> Turniket nebo el. bzučák u hlavního vchodu.</span></li>
@@ -160,7 +155,6 @@ export default function LandingPage() {
             </CardFooter>
           </Card>
 
-          {/* Package 3: SMART CAMPUS */}
           <Card className="flex flex-col border-2 hover:border-primary/50 transition-all bg-white shadow-sm hover:shadow-xl rounded-[2rem]">
             <CardHeader className="pb-8">
               <Badge className="w-fit mb-4 font-bold" variant="secondary">Enterprise</Badge>
@@ -168,8 +162,7 @@ export default function LandingPage() {
               <p className="text-orange-600 font-black text-sm uppercase tracking-wider">Plná digitalizace</p>
             </CardHeader>
             <CardContent className="flex-1 space-y-6">
-              <p className="text-sm text-muted-foreground">Cíl: Karta jako univerzální klíč k areálu, službám a evidenci pohybu.</p>
-              <div className="bg-muted/50 p-3 rounded-xl border border-dashed text-[10px] font-black text-muted-foreground text-center uppercase tracking-tighter">Obsahuje Plán 1 + Plán 2</div>
+              <div className="bg-muted/50 p-3 rounded-xl border border-dashed text-[10px] font-black text-muted-foreground text-center uppercase tracking-tighter">Obsahuje Plán STANDARD + GATEKEEPER</div>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>HW:</b> Smart zámky na kabinetech a odborných učebnách.</span></li>
                 <li className="flex items-start gap-3"><CheckCircle2 className="h-5 w-5 text-green-500 shrink-0" /> <span><b>Jídelna & Knihovna:</b> Integrace s ISIC kartou.</span></li>
@@ -184,8 +177,8 @@ export default function LandingPage() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-20 px-4 bg-muted/30 rounded-[3rem]">
-        <div className="max-w-4xl mx-auto text-center space-y-10">
+      <section className="py-20 px-4 bg-muted/30 rounded-[3rem] text-center">
+        <div className="max-w-4xl mx-auto space-y-10">
           <div className="space-y-4">
             <h2 className="text-4xl md:text-5xl font-bold font-headline leading-tight">Software už máte. My dodáme "smysly".</h2>
             <p className="text-lg text-muted-foreground leading-relaxed">

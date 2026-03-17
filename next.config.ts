@@ -3,7 +3,7 @@ import type {NextConfig} from 'next';
 const nextConfig: NextConfig = {
   output: 'export',
   basePath: '/studio',
-  assetPrefix: '/studio/',
+  // trailingSlash je klíčový pro GitHub Pages, aby fungovaly podstránky a refresh
   trailingSlash: true,
   images: {
     unoptimized: true,
