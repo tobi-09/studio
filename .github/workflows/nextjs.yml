@@ -30,6 +30,8 @@ jobs:
         run: npm install
       - name: Build with Next.js
         run: npx next build
+      - name: Copy images to out
+        run: if [ -d "img" ]; then cp -r img out/; fi
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

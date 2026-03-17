@@ -1,3 +1,4 @@
+
 "use client"
 
 import React from "react"
@@ -17,7 +18,6 @@ import {
 import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import Link from "next/link"
 
 export default function LandingPage() {
@@ -58,55 +58,15 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* DETEKCE PODVODU - Visual Component Replacement */}
+      {/* SYSTÉMOVÁ VÝZVA - Nahrazeno obrázkem */}
       <section className="px-4">
         <div className="max-w-4xl mx-auto">
-          <div className="relative overflow-hidden rounded-[2rem] bg-white border-4 border-destructive/20 shadow-2xl p-1 md:p-8">
-            <div className="bg-slate-50 rounded-[1.5rem] p-6 md:p-10 border border-slate-200">
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="bg-slate-900 p-2 rounded-lg">
-                    <ShieldAlert className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h2 className="text-sm font-black uppercase tracking-[0.2em] text-slate-500">Bezpečnostní systém</h2>
-                    <p className="text-xs text-slate-400">EduGate Hub Core v2.4</p>
-                  </div>
-                </div>
-                <Badge variant="destructive" className="animate-pulse px-4 py-1 text-sm font-bold shadow-lg shadow-destructive/20 uppercase tracking-widest">
-                  DETEKCE PODVODU
-                </Badge>
-              </div>
-
-              <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="h-12 w-12 rounded-2xl bg-destructive/10 flex items-center justify-center shrink-0">
-                    <AlertTriangle className="h-6 w-6 text-destructive" />
-                  </div>
-                  <div className="space-y-1">
-                    <h3 className="text-2xl font-bold text-slate-900">Nalezen nesoulad v 3.B</h3>
-                    <div className="flex items-center gap-3 text-lg">
-                      <span className="font-semibold text-slate-600">Pípnutí: <span className="text-slate-900">24</span></span>
-                      <span className="text-slate-300">|</span>
-                      <span className="font-semibold text-slate-600">Fyzicky potvrzeno: <span className="text-destructive font-black">22</span></span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-2xl border-l-4 border-destructive shadow-sm italic text-slate-700 leading-relaxed text-lg">
-                  "Karty žáků <span className="font-bold text-slate-900 underline decoration-destructive/30">S042</span> a <span className="font-bold text-slate-900 underline decoration-destructive/30">S015</span> jsou v systému označeny jako přítomné, ale učitel je fyzicky nepotvrdil. Karta byla pravděpodobně ponechána u spolužáka."
-                </div>
-
-                <div className="flex flex-wrap gap-4 pt-4">
-                  <Button variant="outline" className="rounded-xl border-slate-200 h-12 px-6 font-bold">
-                    Zobrazit logy čtečky
-                  </Button>
-                  <Button className="rounded-xl bg-destructive hover:bg-destructive/90 text-white h-12 px-6 font-bold shadow-lg shadow-destructive/20">
-                    Nahlásit zneužití karty
-                  </Button>
-                </div>
-              </div>
-            </div>
+          <div className="relative overflow-hidden rounded-[2.5rem] shadow-2xl">
+            <img 
+              src="/studio/img/oznamení.png" 
+              alt="Systémová výzva: Kontrola přítomnosti EduGate" 
+              className="w-full h-auto block"
+            />
           </div>
         </div>
       </section>
